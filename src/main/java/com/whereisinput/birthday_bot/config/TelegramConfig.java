@@ -12,6 +12,8 @@ import com.pengrad.telegrambot.TelegramBot;
 @Configuration
 public class TelegramConfig {
 
+    public static final String CHAT_ID = "-699185295";
+
     @Bean
     public TelegramBot getTelegramBot(@Value("${telegram.bot.token}") final String botToken) {
         return new TelegramBot(botToken);
