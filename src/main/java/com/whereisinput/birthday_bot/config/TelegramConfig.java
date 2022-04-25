@@ -1,6 +1,7 @@
 package com.whereisinput.birthday_bot.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,6 +11,7 @@ import com.pengrad.telegrambot.TelegramBot;
  * Created by yuriy_polyakevich at 4/16/22
  */
 @Configuration
+@ConfigurationPropertiesScan(basePackageClasses = {AdventureConfigurationProperties.class})
 public class TelegramConfig {
 
     public static final String CHAT_ID = "-699185295";
@@ -17,6 +19,11 @@ public class TelegramConfig {
     @Bean
     public TelegramBot getTelegramBot(@Value("${telegram.bot.token}") final String botToken) {
         return new TelegramBot(botToken);
+    }
+
+    public static class RequestCallbackID {
+        public static final String INITIAL = "INITIAL";
+        public static final String WHO_WAKES_UP_SO_EARLY = "WHO_WAKES_UP_SO_EARLY";
     }
 
 }

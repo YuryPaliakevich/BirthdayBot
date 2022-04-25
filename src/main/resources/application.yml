@@ -1,0 +1,27 @@
+telegram:
+  bot:
+    token=
+
+adventure:
+  action:
+    data:
+      -
+        imageUrl: img/${adventure.action.data[0].key}.jpg
+        key: INITIAL
+        text: На часах 08:00. Алина проснулась от необычного шороха
+        buttons:
+          -
+            text: Продолжить
+            callback: ${adventure.action.data[1].key}
+      -
+        imageUrl: img/${adventure.action.data[1].key}.jpg
+        key: WHO_WAKES_UP_SO_EARLY
+        text: \"Кто бы это мог быть так рано?\" - подумала она
+        buttons:
+          -
+            text: Продолжить
+            callback: ''
+
+spring:
+  main:
+    allow-circular-references: true

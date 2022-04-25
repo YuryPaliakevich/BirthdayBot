@@ -1,9 +1,5 @@
 package com.whereisinput.birthday_bot.domain.request;
 
-import com.pengrad.telegrambot.Callback;
-import com.pengrad.telegrambot.request.BaseRequest;
-import com.pengrad.telegrambot.response.BaseResponse;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,5 +13,6 @@ import lombok.NoArgsConstructor;
 public class ActionButtonRequest {
 
     private String name;
+    private String callback;
 
 }

@@ -38,6 +38,11 @@ public class MessageBuilder {
         return this;
     }
 
+    public MessageBuilder withActionButtonRequests(final List<ActionButtonRequest> actionButtonRequests) {
+        this.actionButtonRequests.addAll(actionButtonRequests);
+        return this;
+    }
+
     public Message build() {
         return new Message(messageID, actionButtonRequests, imageRequest, textRequest);
     }

@@ -9,14 +9,20 @@ import com.whereisinput.birthday_bot.domain.request.ActionButtonRequest;
 public class ActionButtonRequestBuilder {
 
     private String name;
+    private String callback;
 
     public ActionButtonRequestBuilder withName(String name) {
         this.name = name;
         return this;
     }
 
+    public ActionButtonRequestBuilder withCallback(String name) {
+        this.name = name;
+        return this;
+    }
+
     public ActionButtonRequest build() {
-        return new ActionButtonRequest(name);
+        return new ActionButtonRequest(name, callback);
     }
 
 }
