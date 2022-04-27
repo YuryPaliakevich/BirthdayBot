@@ -1,16 +1,11 @@
 package com.whereisinput.birthday_bot.service;
 
-import static com.whereisinput.birthday_bot.config.TelegramConfig.RequestCallbackID.INITIAL;
-import static com.whereisinput.birthday_bot.config.TelegramConfig.RequestCallbackID.WHO_WAKES_UP_SO_EARLY;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,12 +51,9 @@ public class TelegramServiceFacade {
     }
 
     public void sendMessage(final String callbackKey) {
-        switch (callbackKey) {
-        case INITIAL -> telegramService.sendMessage(
-                createMessage(advConfigProperties.getAdventureConfigActionByKey(INITIAL)));
-        case WHO_WAKES_UP_SO_EARLY -> telegramService.sendMessage(
-                createMessage(advConfigProperties.getAdventureConfigActionByKey(WHO_WAKES_UP_SO_EARLY)));
-        }
+        final AdventureConfigAction adventureConfigActionByKey = advConfigProperties.getAdventureConfigActionByKey(callbackKey);
+        final Message message = createMessage(adventureConfigActionByKey);
+        telegramService.sendMessage(message);
     }
 
     private Message createMessage(AdventureConfigAction adventureConfigAction) {

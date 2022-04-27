@@ -21,9 +21,4 @@ public class TelegramConfig {
         return new TelegramBot(botToken);
     }
 
-    public static class RequestCallbackID {
-        public static final String INITIAL = "INITIAL";
-        public static final String WHO_WAKES_UP_SO_EARLY = "WHO_WAKES_UP_SO_EARLY";
-    }
-
 }
