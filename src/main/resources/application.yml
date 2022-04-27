@@ -6,21 +6,96 @@ adventure:
   action:
     data:
       -
-        imageUrl: img/${adventure.action.data[0].key}.jpg
+        imageUrl: img/INITIAL.jpg
         key: INITIAL
         text: На часах 08:00. Алина проснулась от необычного шороха
         buttons:
           -
             text: Продолжить
-            callback: ${adventure.action.data[1].key}
+            callback: WHO_WAKES_UP_SO_EARLY
       -
-        imageUrl: img/${adventure.action.data[1].key}.jpg
+        imageUrl: img/WHO_WAKES_UP_SO_EARLY.jpg
         key: WHO_WAKES_UP_SO_EARLY
         text: Кто бы это мог быть так рано? - подумала она
         buttons:
           -
             text: Продолжить
-            callback: ''
+            callback: WAY_TO_THE_KITCHEN
+      -
+        imageUrl: img/WAY_TO_THE_KITCHEN.jpg
+        key: WAY_TO_THE_KITCHEN
+        text: Нехотя встав с кровати, она последовала за шорохом
+        buttons:
+          -
+            text: Продолжить
+            callback: AT_THE_KITCHEN
+      -
+        imageUrl: img/AT_THE_KITCHEN.jpg
+        key: AT_THE_KITCHEN
+        text: Каково было её удивление, когда она увидела кошака, бегающего по кругу
+        buttons:
+          -
+            text: Продолжить
+            callback: RUNNING_AFTER_THE_CAT
+      -
+        imageUrl: img/RUNNING_AFTER_THE_CAT.jpg
+        key: RUNNING_AFTER_THE_CAT
+        text: Кошак, увидев Алину, побежал ко входной двери
+        buttons:
+          -
+            text: Продолжить
+            callback: FOLLOW_THE_CAT_OR_NOT
+      -
+        imageUrl: img/FOLLOW_THE_CAT_OR_NOT.jpg
+        key: FOLLOW_THE_CAT_OR_NOT
+        text: Кошак остановился возле входной двери и начал мяукать, что же делать, подумала Алина?
+        buttons:
+          -
+            text: Забить на кошака
+            callback: GOODBYE_KITTY
+          -
+            text: Пойти за ним
+            callback: OKAY_LETS_GO
+      -
+        imageUrl: img/GOODBYE_KITTY.jpg
+        key: GOODBYE_KITTY
+        text: Алина, скрепя сердцем, выпускает кошака....
+        buttons:
+          -
+            text: Продолжить
+            callback: WILL_BUY_A_NEW_ONE
+      -
+        imageUrl: img/WILL_BUY_A_NEW_ONE.jpg
+        key: WILL_BUY_A_NEW_ONE
+        text: Блииин, как он там? что я наделала?......
+        buttons:
+          -
+            text: Продолжить
+            callback: HEARING_MEOW_AGAIN
+      -
+        imageUrl: img/HEARING_MEOW_AGAIN.jpg
+        key: HEARING_MEOW_AGAIN
+        text: Не успела она подумать, как из коридора донеслось знакомое "МЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯУ"
+        buttons:
+          -
+            text: Продолжить
+            callback: HELLO_KITTY_AGAIN
+      -
+        imageUrl: img/HELLO_KITTY_AGAIN.jpg
+        key: HELLO_KITTY_AGAIN
+        text: Это был кошак!
+        buttons:
+          -
+            text: Продолжить
+            callback:
+      -
+        imageUrl: img/OKAY_LETS_GO.jpg
+        key: OKAY_LETS_GO
+        text: Алина решает последовать за кошак и выяснить, что же всё-таки его сюда привело
+        buttons:
+          -
+            text: Продолжить
+            callback:
 
 spring:
   main:
