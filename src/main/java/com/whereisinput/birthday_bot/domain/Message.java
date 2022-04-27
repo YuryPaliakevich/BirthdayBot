@@ -2,8 +2,6 @@ package com.whereisinput.birthday_bot.domain;
 
 import java.util.List;
 
-import com.pengrad.telegrambot.request.BaseRequest;
-import com.pengrad.telegrambot.response.BaseResponse;
 import com.whereisinput.birthday_bot.domain.request.ActionButtonRequest;
 import com.whereisinput.birthday_bot.domain.request.ImageRequest;
 import com.whereisinput.birthday_bot.domain.request.TextRequest;

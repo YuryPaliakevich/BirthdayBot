@@ -16,8 +16,8 @@ public class ActionButtonRequestBuilder {
         return this;
     }
 
-    public ActionButtonRequestBuilder withCallback(String name) {
-        this.name = name;
+    public ActionButtonRequestBuilder withCallback(String callback) {
+        this.callback = callback;
         return this;
     }
 

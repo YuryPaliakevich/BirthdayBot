@@ -16,7 +16,7 @@ adventure:
       -
         imageUrl: img/${adventure.action.data[1].key}.jpg
         key: WHO_WAKES_UP_SO_EARLY
-        text: \"Кто бы это мог быть так рано?\" - подумала она
+        text: Кто бы это мог быть так рано? - подумала она
         buttons:
           -
             text: Продолжить

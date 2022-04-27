@@ -1,6 +1,7 @@
 package com.whereisinput.birthday_bot.service;
 
 import static com.whereisinput.birthday_bot.config.TelegramConfig.RequestCallbackID.INITIAL;
+import static com.whereisinput.birthday_bot.config.TelegramConfig.RequestCallbackID.WHO_WAKES_UP_SO_EARLY;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,21 +45,22 @@ public class TelegramServiceFacade {
 
     @PostConstruct
     private void init() {
-        System.out.println(1);
         telegramBot.setUpdatesListener(updates -> {
             try {
                 final Update update = updates.get(0);
                 sendMessage(update.callbackQuery().data());
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
             return UpdatesListener.CONFIRMED_UPDATES_ALL;
         });
     }
 
     public void sendMessage(final String callbackKey) {
-        System.out.println(callbackKey);
         switch (callbackKey) {
-        case INITIAL:
-            telegramService.sendMessage(createMessage(advConfigProperties.getAdventureConfigActionByKey(INITIAL)));
+        case INITIAL -> telegramService.sendMessage(
+                createMessage(advConfigProperties.getAdventureConfigActionByKey(INITIAL)));
+        case WHO_WAKES_UP_SO_EARLY -> telegramService.sendMessage(
+                createMessage(advConfigProperties.getAdventureConfigActionByKey(WHO_WAKES_UP_SO_EARLY)));
         }
     }
 
