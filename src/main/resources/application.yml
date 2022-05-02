@@ -87,7 +87,7 @@ adventure:
         buttons:
           -
             text: Продолжить
-            callback:
+            callback: PAPER_FOUND
       -
         imageUrl: img/OKAY_LETS_GO.jpg
         key: OKAY_LETS_GO
@@ -96,7 +96,46 @@ adventure:
           -
             text: Продолжить
             callback:
-
-spring:
-  main:
-    allow-circular-references: true
+      -
+        imageUrl: img/PAPER_FOUND.jpg
+        key: PAPER_FOUND
+        text: Странную записку заметила алина у кошака на шерсти, она развернула её
+        buttons:
+          -
+            text: Продолжить
+            callback: TO_FIND_NEW_WAY
+      -
+        imageUrl: img/TO_FIND_NEW_WAY.jpg
+        key: TO_FIND_NEW_WAY
+        text: ...
+        buttons:
+          -
+            text: Продолжить
+            callback: WHAT_THE_HELL_IS_THIS_PAPER
+      -
+        imageUrl: img/WHAT_THE_HELL_IS_THIS_PAPER.jpg
+        key: WHAT_THE_HELL_IS_THIS_PAPER
+        text: Это что, цитата из паблика??? Она перевернула записку
+        buttons:
+          -
+            text: Продолжить
+            callback: QUOTE_15_WAIT
+      -
+        imageUrl: img/QUOTE_15_WAIT.jpg
+        key: QUOTE_15_WAIT
+        text: Хммм
+        buttons:
+          -
+            text: Подождать 15 минут
+            callback: RIP_BORING
+          -
+            text: Нет
+            callback:
+      -
+        imageUrl: img/RIP_BORING.jpg
+        key: RIP_BORING
+        text: К сожалению, Алина погибла от скуки, не будьте такими жестокими
+        buttons:
+          -
+            text: Начать заново
+            callback: INITIAL
