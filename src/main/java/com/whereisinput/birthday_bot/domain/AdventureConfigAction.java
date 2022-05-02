@@ -11,6 +11,7 @@ import lombok.Data;
 public class AdventureConfigAction {
 
     private String imageUrl;
+    private String audioUrl;
     private String key;
     private String text;
     private List<AdventureConfigButton> buttons;

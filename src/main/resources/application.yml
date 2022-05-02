@@ -7,6 +7,7 @@ adventure:
     data:
       -
         imageUrl: img/INITIAL.jpg
+        audioUrl: audio/CAT_RUSTLE.mp3
         key: INITIAL
         text: На часах 08:00. Алина проснулась от необычного шороха
         buttons:
@@ -130,7 +131,7 @@ adventure:
             callback: RIP_BORING
           -
             text: Нет
-            callback:
+            callback: NO_WAITING
       -
         imageUrl: img/RIP_BORING.jpg
         key: RIP_BORING

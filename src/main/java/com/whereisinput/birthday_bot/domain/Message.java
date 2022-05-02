@@ -3,6 +3,7 @@ package com.whereisinput.birthday_bot.domain;
 import java.util.List;
 
 import com.whereisinput.birthday_bot.domain.request.ActionButtonRequest;
+import com.whereisinput.birthday_bot.domain.request.AudioRequest;
 import com.whereisinput.birthday_bot.domain.request.ImageRequest;
 import com.whereisinput.birthday_bot.domain.request.TextRequest;
 
@@ -20,5 +21,6 @@ public class Message {
     private List<ActionButtonRequest> actionButtonRequests;
     private ImageRequest imageRequest;
     private TextRequest textRequest;
+    private AudioRequest audioRequest;
 
 }

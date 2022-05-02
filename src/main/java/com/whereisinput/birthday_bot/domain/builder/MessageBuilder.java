@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.whereisinput.birthday_bot.domain.Message;
 import com.whereisinput.birthday_bot.domain.request.ActionButtonRequest;
+import com.whereisinput.birthday_bot.domain.request.AudioRequest;
 import com.whereisinput.birthday_bot.domain.request.ImageRequest;
 import com.whereisinput.birthday_bot.domain.request.TextRequest;
 
@@ -17,6 +18,7 @@ public class MessageBuilder {
     private final List<ActionButtonRequest> actionButtonRequests = new ArrayList<>();
     private ImageRequest imageRequest;
     private TextRequest textRequest;
+    private AudioRequest audioRequest;
 
     public MessageBuilder withImageRequest(final ImageRequest imageRequest) {
         this.imageRequest = imageRequest;
@@ -33,18 +35,18 @@ public class MessageBuilder {
         return this;
     }
 
-    public MessageBuilder withActionButtonRequest(final ActionButtonRequest actionButtonRequest) {
-        this.actionButtonRequests.add(actionButtonRequest);
-        return this;
-    }
-
     public MessageBuilder withActionButtonRequests(final List<ActionButtonRequest> actionButtonRequests) {
         this.actionButtonRequests.addAll(actionButtonRequests);
         return this;
     }
 
+    public MessageBuilder withAudioRequest(final AudioRequest audioRequest) {
+        this.audioRequest = audioRequest;
+        return this;
+    }
+
     public Message build() {
-        return new Message(messageID, actionButtonRequests, imageRequest, textRequest);
+        return new Message(messageID, actionButtonRequests, imageRequest, textRequest, audioRequest);
     }
 
 }

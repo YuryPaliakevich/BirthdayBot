@@ -19,6 +19,7 @@ import com.whereisinput.birthday_bot.domain.Message;
 import com.whereisinput.birthday_bot.domain.builder.ActionButtonRequestBuilder;
 import com.whereisinput.birthday_bot.domain.builder.MessageBuilder;
 import com.whereisinput.birthday_bot.domain.request.ActionButtonRequest;
+import com.whereisinput.birthday_bot.domain.request.AudioRequest;
 import com.whereisinput.birthday_bot.domain.request.ImageRequest;
 import com.whereisinput.birthday_bot.domain.request.TextRequest;
 
@@ -61,20 +62,23 @@ public class TelegramServiceFacade {
                 .map(button -> new ActionButtonRequestBuilder().withName(button.getText())
                         .withCallback(button.getCallback()).build()).toList();
         final TextRequest textRequest = new TextRequest(adventureConfigAction.getText());
-        final ImageRequest imageRequest = new ImageRequest(getImageByUrl(adventureConfigAction.getImageUrl()));
+        final ImageRequest imageRequest = new ImageRequest(getFileByUrl(adventureConfigAction.getImageUrl()));
+        final AudioRequest audioRequest = new AudioRequest(getFileByUrl(adventureConfigAction.getAudioUrl()));
         return new MessageBuilder().withMessageID(adventureConfigAction.getKey())
                 .withActionButtonRequests(actionButtonRequests).withImageRequest(imageRequest)
-                .withTextRequest(textRequest).build();
+                .withTextRequest(textRequest)
+                .withAudioRequest(audioRequest)
+                .build();
     }
 
-    private byte[] getImageByUrl(String imageUrl) {
+    private byte[] getFileByUrl(String fileUrl) {
         try {
-            final InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream(imageUrl);
+            final InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream(fileUrl);
             if (resourceAsStream != null) {
                 return IOUtils.toByteArray(resourceAsStream);
             }
         } catch (IOException e) {
-            log.error("File with path: {} was not found", imageUrl);
+            log.error("File with path: {} was not found", fileUrl);
         }
         return null;
     }

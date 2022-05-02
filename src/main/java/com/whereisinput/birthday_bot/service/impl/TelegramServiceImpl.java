@@ -3,24 +3,20 @@ package com.whereisinput.birthday_bot.service.impl;
 import static com.whereisinput.birthday_bot.config.TelegramConfig.CHAT_ID;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
 import com.pengrad.telegrambot.Callback;
 import com.pengrad.telegrambot.TelegramBot;
-import com.pengrad.telegrambot.model.request.InlineKeyboardButton;
-import com.pengrad.telegrambot.model.request.InlineKeyboardMarkup;
 import com.pengrad.telegrambot.request.BaseRequest;
+import com.pengrad.telegrambot.request.SendAudio;
 import com.pengrad.telegrambot.request.SendMessage;
 import com.pengrad.telegrambot.request.SendPhoto;
 import com.pengrad.telegrambot.response.BaseResponse;
 import com.pengrad.telegrambot.response.SendResponse;
 import com.whereisinput.birthday_bot.domain.Message;
-import com.whereisinput.birthday_bot.domain.request.ActionButtonRequest;
+import com.whereisinput.birthday_bot.domain.builder.TelegramSendMessageBuilder;
 import com.whereisinput.birthday_bot.service.TelegramService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -37,15 +33,11 @@ public class TelegramServiceImpl implements TelegramService {
 
     @Override
     public void sendMessage(Message message) {
-        if (message.getImageRequest() != null) {
-            final SendPhoto baseRequest = new SendPhoto(CHAT_ID, message.getImageRequest().getImage());
-            sendRequest(baseRequest, new SendImageCallback(message));
-        } else {
-            if (message.getTextRequest() != null) {
-                final SendMessage baseRequest = getSendMessage(message);
-                sendRequest(baseRequest);
-            }
+        if (message.getImageRequest() == null) {
+            return;
         }
+        final SendPhoto baseRequest = new SendPhoto(CHAT_ID, message.getImageRequest().getImage());
+        sendRequest(baseRequest, new SendImageCallback(message));
     }
 
     private <T extends BaseRequest<T, R>, R extends BaseResponse> void sendRequest(final T baseRequest) {
@@ -77,35 +69,39 @@ public class TelegramServiceImpl implements TelegramService {
 
         @Override
         public void onResponse(SendPhoto request, SendResponse response) {
-            final SendMessage baseRequest = getSendMessage(message);
-
-            sendRequest(baseRequest);
+            if (message.getAudioRequest() != null) {
+                final SendAudio audio = new SendAudio(CHAT_ID, message.getAudioRequest().getAudio());
+                sendRequest(audio, new SendAudioCallback(message));
+            } else {
+                final SendMessage baseRequest = TelegramSendMessageBuilder.of(message);
+                sendRequest(baseRequest);
+            }
         }
 
         @Override
         public void onFailure(SendPhoto request, IOException e) {
+            log.error("Error image callback, :{}", e.getMessage());
         }
-    }
 
-    private SendMessage getSendMessage(final Message message) {
-        final SendMessage sendMessage = new SendMessage(CHAT_ID,
-                message.getTextRequest() == null ? "" : message.getTextRequest().getText());
-        final List<ActionButtonRequest> actionButtonRequests = message.getActionButtonRequests();
-        if (!CollectionUtils.isEmpty(actionButtonRequests) && actionButtonRequests.stream()
-                .anyMatch(actionButtonRequest -> StringUtils.hasText(actionButtonRequest.getCallback()))) {
-            final InlineKeyboardMarkup inlineKeyboard = new InlineKeyboardMarkup();
-            for (final ActionButtonRequest actionButtonRequest : actionButtonRequests) {
-                if (!StringUtils.hasText(actionButtonRequest.getCallback())) {
-                    log.error("callback must contain text");
-                    continue;
-                }
-                final InlineKeyboardButton inlineKeyboardButton = new InlineKeyboardButton(
-                        actionButtonRequest.getName()).callbackData(actionButtonRequest.getCallback());
-                inlineKeyboard.addRow(inlineKeyboardButton);
+        private class SendAudioCallback implements Callback<SendAudio, SendResponse> {
+
+            private final Message message;
+
+            private SendAudioCallback(Message message) {
+                this.message = message;
             }
-            sendMessage.replyMarkup(inlineKeyboard.inlineKeyboard().length == 0 ? null : inlineKeyboard);
-        }
-        return sendMessage;
-    }
 
+            @Override
+            public void onResponse(SendAudio request, SendResponse response) {
+                final SendMessage baseRequest = TelegramSendMessageBuilder.of(message);
+                sendRequest(baseRequest);
+            }
+
+            @Override
+            public void onFailure(SendAudio request, IOException e) {
+                log.error("Error send audio callback, message: {}", e.getMessage());
+            }
+        }
+
+    }
 }
