@@ -81,7 +81,7 @@ adventure:
       -
         imageUrl: HEARING_MEOW_AGAIN.jpg
         key: HEARING_MEOW_AGAIN
-        audioUrl: audio/MEOW_BEHIND_THE_DOOR.mp3
+        audioUrl: MEOW_BEHIND_THE_DOOR.mp3
         text: Не успела она подумать, как из коридора донеслось знакомое "МЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯУ"
         buttons:
           -
@@ -90,6 +90,7 @@ adventure:
       -
         imageUrl: HELLO_KITTY_AGAIN.jpg
         key: HELLO_KITTY_AGAIN
+        audioUrl: HELLO_KITTY_AGAIN.mp3
         text: Это был кошак!
         buttons:
           -
@@ -98,6 +99,7 @@ adventure:
       -
         imageUrl: OKAY_LETS_GO.jpg
         key: OKAY_LETS_GO
+        audioUrl: OKAY_LETS_GO.mp3
         text: Алина решает последовать за кошак и выяснить, что же всё-таки его сюда привело
         buttons:
           -
@@ -106,6 +108,7 @@ adventure:
       -
         imageUrl: PAPER_FOUND.jpg
         key: PAPER_FOUND
+        audioUrl: PAPER_SOUND.mp3
         text: Странную записку заметила алина у кошака на шерсти, она развернула её
         buttons:
           -
@@ -130,6 +133,7 @@ adventure:
       -
         imageUrl: QUOTE_15_WAIT.jpg
         key: QUOTE_15_WAIT
+        audioUrl: WOMAN_HMM.mp3
         text: Хммм
         buttons:
           -
@@ -141,6 +145,7 @@ adventure:
       -
         imageUrl: RIP_BORING.jpg
         key: RIP_BORING
+        audioUrl: VIOLIN_DEATH.mp3
         text: К сожалению, Алина погибла от скуки, не будьте такими жестокими
         buttons:
           -
