@@ -6,8 +6,8 @@ adventure:
   action:
     data:
       -
-        imageUrl: img/INITIAL.jpg
-        audioUrl: audio/CAT_RUSTLE.mp3
+        imageUrl: INITIAL.jpg
+        audioUrl: CAT_RUSTLE.mp3
         key: INITIAL
         text: На часах 08:00. Алина проснулась от необычного шороха
         buttons:
@@ -15,7 +15,8 @@ adventure:
             text: Продолжить
             callback: WHO_WAKES_UP_SO_EARLY
       -
-        imageUrl: img/WHO_WAKES_UP_SO_EARLY.jpg
+        imageUrl: WHO_WAKES_UP_SO_EARLY.jpg
+        audioUrl: WOMAN_HMM.mp3
         key: WHO_WAKES_UP_SO_EARLY
         text: Кто бы это мог быть так рано? - подумала она
         buttons:
@@ -23,7 +24,7 @@ adventure:
             text: Продолжить
             callback: WAY_TO_THE_KITCHEN
       -
-        imageUrl: img/WAY_TO_THE_KITCHEN.jpg
+        imageUrl: WAY_TO_THE_KITCHEN.jpg
         key: WAY_TO_THE_KITCHEN
         text: Нехотя встав с кровати, она последовала за шорохом
         buttons:
@@ -31,7 +32,8 @@ adventure:
             text: Продолжить
             callback: AT_THE_KITCHEN
       -
-        imageUrl: img/AT_THE_KITCHEN.jpg
+        imageUrl: AT_THE_KITCHEN.jpg
+        audioUrl: MEOW_AT_THE_KITCHEN.mp3
         key: AT_THE_KITCHEN
         text: Каково было её удивление, когда она увидела кошака, бегающего по кругу
         buttons:
@@ -39,7 +41,8 @@ adventure:
             text: Продолжить
             callback: RUNNING_AFTER_THE_CAT
       -
-        imageUrl: img/RUNNING_AFTER_THE_CAT.jpg
+        imageUrl: RUNNING_AFTER_THE_CAT.jpg
+        audioUrl: CAT_RUNNING.mp3
         key: RUNNING_AFTER_THE_CAT
         text: Кошак, увидев Алину, побежал ко входной двери
         buttons:
@@ -47,7 +50,8 @@ adventure:
             text: Продолжить
             callback: FOLLOW_THE_CAT_OR_NOT
       -
-        imageUrl: img/FOLLOW_THE_CAT_OR_NOT.jpg
+        imageUrl: FOLLOW_THE_CAT_OR_NOT.jpg
+        audioUrl: MEOW_NEAR_THE_DOOR.mp3
         key: FOLLOW_THE_CAT_OR_NOT
         text: Кошак остановился возле входной двери и начал мяукать, что же делать, подумала Алина?
         buttons:
@@ -58,7 +62,8 @@ adventure:
             text: Пойти за ним
             callback: OKAY_LETS_GO
       -
-        imageUrl: img/GOODBYE_KITTY.jpg
+        imageUrl: GOODBYE_KITTY.jpg
+        audioUrl: ADIOS.mp3
         key: GOODBYE_KITTY
         text: Алина, скрепя сердцем, выпускает кошака....
         buttons:
@@ -66,7 +71,7 @@ adventure:
             text: Продолжить
             callback: WILL_BUY_A_NEW_ONE
       -
-        imageUrl: img/WILL_BUY_A_NEW_ONE.jpg
+        imageUrl: WILL_BUY_A_NEW_ONE.jpg
         key: WILL_BUY_A_NEW_ONE
         text: Блииин, как он там? что я наделала?......
         buttons:
@@ -74,15 +79,16 @@ adventure:
             text: Продолжить
             callback: HEARING_MEOW_AGAIN
       -
-        imageUrl: img/HEARING_MEOW_AGAIN.jpg
+        imageUrl: HEARING_MEOW_AGAIN.jpg
         key: HEARING_MEOW_AGAIN
+        audioUrl: audio/MEOW_BEHIND_THE_DOOR.mp3
         text: Не успела она подумать, как из коридора донеслось знакомое "МЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯУ"
         buttons:
           -
             text: Продолжить
             callback: HELLO_KITTY_AGAIN
       -
-        imageUrl: img/HELLO_KITTY_AGAIN.jpg
+        imageUrl: HELLO_KITTY_AGAIN.jpg
         key: HELLO_KITTY_AGAIN
         text: Это был кошак!
         buttons:
@@ -90,7 +96,7 @@ adventure:
             text: Продолжить
             callback: PAPER_FOUND
       -
-        imageUrl: img/OKAY_LETS_GO.jpg
+        imageUrl: OKAY_LETS_GO.jpg
         key: OKAY_LETS_GO
         text: Алина решает последовать за кошак и выяснить, что же всё-таки его сюда привело
         buttons:
@@ -98,7 +104,7 @@ adventure:
             text: Продолжить
             callback:
       -
-        imageUrl: img/PAPER_FOUND.jpg
+        imageUrl: PAPER_FOUND.jpg
         key: PAPER_FOUND
         text: Странную записку заметила алина у кошака на шерсти, она развернула её
         buttons:
@@ -106,7 +112,7 @@ adventure:
             text: Продолжить
             callback: TO_FIND_NEW_WAY
       -
-        imageUrl: img/TO_FIND_NEW_WAY.jpg
+        imageUrl: TO_FIND_NEW_WAY.jpg
         key: TO_FIND_NEW_WAY
         text: ...
         buttons:
@@ -114,7 +120,7 @@ adventure:
             text: Продолжить
             callback: WHAT_THE_HELL_IS_THIS_PAPER
       -
-        imageUrl: img/WHAT_THE_HELL_IS_THIS_PAPER.jpg
+        imageUrl: WHAT_THE_HELL_IS_THIS_PAPER.jpg
         key: WHAT_THE_HELL_IS_THIS_PAPER
         text: Это что, цитата из паблика??? Она перевернула записку
         buttons:
@@ -122,7 +128,7 @@ adventure:
             text: Продолжить
             callback: QUOTE_15_WAIT
       -
-        imageUrl: img/QUOTE_15_WAIT.jpg
+        imageUrl: QUOTE_15_WAIT.jpg
         key: QUOTE_15_WAIT
         text: Хммм
         buttons:
@@ -133,7 +139,7 @@ adventure:
             text: Нет
             callback: NO_WAITING
       -
-        imageUrl: img/RIP_BORING.jpg
+        imageUrl: RIP_BORING.jpg
         key: RIP_BORING
         text: К сожалению, Алина погибла от скуки, не будьте такими жестокими
         buttons:

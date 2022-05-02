@@ -71,6 +71,7 @@ public class TelegramServiceImpl implements TelegramService {
         public void onResponse(SendPhoto request, SendResponse response) {
             if (message.getAudioRequest() != null) {
                 final SendAudio audio = new SendAudio(CHAT_ID, message.getAudioRequest().getAudio());
+                audio.title("sound.mp3");
                 sendRequest(audio, new SendAudioCallback(message));
             } else {
                 final SendMessage baseRequest = TelegramSendMessageBuilder.of(message);

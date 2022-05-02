@@ -9,6 +9,7 @@ import javax.annotation.PostConstruct;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
@@ -45,7 +46,8 @@ public class TelegramServiceFacade {
             try {
                 final Update update = updates.get(0);
                 sendMessage(update.callbackQuery().data());
-            } catch (Exception ignored) {
+            } catch (Exception e) {
+                log.error("Exception occurred", e);
             }
             return UpdatesListener.CONFIRMED_UPDATES_ALL;
         });
@@ -63,7 +65,12 @@ public class TelegramServiceFacade {
                         .withCallback(button.getCallback()).build()).toList();
         final TextRequest textRequest = new TextRequest(adventureConfigAction.getText());
         final ImageRequest imageRequest = new ImageRequest(getFileByUrl(adventureConfigAction.getImageUrl()));
-        final AudioRequest audioRequest = new AudioRequest(getFileByUrl(adventureConfigAction.getAudioUrl()));
+        final AudioRequest audioRequest;
+        if (!StringUtils.hasText(adventureConfigAction.getAudioUrl())) {
+            audioRequest = null;
+        } else {
+            audioRequest = new AudioRequest(getFileByUrl(adventureConfigAction.getAudioUrl()));
+        }
         return new MessageBuilder().withMessageID(adventureConfigAction.getKey())
                 .withActionButtonRequests(actionButtonRequests).withImageRequest(imageRequest)
                 .withTextRequest(textRequest)
