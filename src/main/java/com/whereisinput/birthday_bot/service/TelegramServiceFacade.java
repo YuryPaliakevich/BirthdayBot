@@ -65,12 +65,10 @@ public class TelegramServiceFacade {
                         .withCallback(button.getCallback()).build()).toList();
         final TextRequest textRequest = new TextRequest(adventureConfigAction.getText());
         final ImageRequest imageRequest = new ImageRequest(getFileByUrl(adventureConfigAction.getImageUrl()));
-        final AudioRequest audioRequest;
-        if (!StringUtils.hasText(adventureConfigAction.getAudioUrl())) {
-            audioRequest = null;
-        } else {
-            audioRequest = new AudioRequest(getFileByUrl(adventureConfigAction.getAudioUrl()));
-        }
+        final AudioRequest audioRequest = new AudioRequest(
+                !StringUtils.hasText(adventureConfigAction.getAudioUrl())
+                ? null
+                : getFileByUrl(adventureConfigAction.getAudioUrl()));
         return new MessageBuilder().withMessageID(adventureConfigAction.getKey())
                 .withActionButtonRequests(actionButtonRequests).withImageRequest(imageRequest)
                 .withTextRequest(textRequest)

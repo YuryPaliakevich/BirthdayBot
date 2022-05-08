@@ -141,7 +141,7 @@ adventure:
             callback: RIP_BORING
           -
             text: Нет
-            callback: NO_WAITING
+            callback: SMALL_NOTE
       -
         imageUrl: RIP_BORING.jpg
         key: RIP_BORING
@@ -151,3 +151,58 @@ adventure:
           -
             text: Начать заново
             callback: INITIAL
+      - imageUrl: SMALL_NOTE.jpg
+        key: SMALL_NOTE
+        text: Краем глаза Алина замечает надпись....
+        buttons:
+          - text: Продолжить
+            callback: HMM_INTERESTING_LETS_GO
+      - imageUrl: HMM_INTERESTING_LETS_GO.jpg
+        key: HMM_INTERESTING_LETS_GO
+        text: Хмм это мнтересно, поеду сгоняю
+        buttons:
+          - text: Продолжить
+            callback: PUTTING_CLOTHES_ON
+      - imageUrl: PUTTING_CLOTHES_ON.jpg
+        key: PUTTING_CLOTHES_ON
+        text: Одевается
+        buttons:
+          - text: Продолжить
+            callback: START_THE_CAR
+      - imageUrl: START_THE_CAR.jpg
+        key: START_THE_CAR
+        text: Заводит машину
+        buttons:
+          - text: Продолжить
+            callback: STREET_RACING
+      - imageUrl: STREET_RACING.jpg
+        key: STREET_RACING
+        text: https://www.youtube.com/watch?v=vZqc9QsR3H8
+        buttons:
+          - text: Продолжить
+            callback: ARRIVING_TO_DESTINATION
+      - imageUrl: ARRIVING_TO_DESTINATION.jpg
+        key: ARRIVING_TO_DESTINATION
+        text: Приезжает
+        buttons:
+          - text: Продолжить
+            callback: NOTE_ON_TREE
+      - imageUrl: NOTE_ON_TREE.jpg
+        key: NOTE_ON_TREE
+        text: ...
+        buttons:
+          - text: Продолжить
+            callback: FINAL_QR_CODE_UNSUCCESSFULL
+      - imageUrl: FINAL_QR_CODE_SUCCESSFULL.jpg
+        key: FINAL_QR_CODE_SUCCESSFULL
+        text: А шо это тут такое интересное
+        buttons:
+          - text: Ещё разок ? :)
+            callback: INITIAL
+      - imageUrl: FINAL_QR_CODE_UNSUCCESSFULL.jpg
+        key: FINAL_QR_CODE_UNSUCCESSFULL
+        text: А шо это тут такое интересное
+        buttons:
+          - text: Ещё разок ? :)
+            callback: INITIAL
+

@@ -33,7 +33,7 @@ public class TelegramServiceImpl implements TelegramService {
 
     @Override
     public void sendMessage(Message message) {
-        if (message.getImageRequest() == null) {
+        if (message.getImageRequest().getImage() == null) {
             return;
         }
         final SendPhoto baseRequest = new SendPhoto(CHAT_ID, message.getImageRequest().getImage());
@@ -69,7 +69,7 @@ public class TelegramServiceImpl implements TelegramService {
 
         @Override
         public void onResponse(SendPhoto request, SendResponse response) {
-            if (message.getAudioRequest() != null) {
+            if (message.getAudioRequest().getAudio() != null) {
                 final SendAudio audio = new SendAudio(CHAT_ID, message.getAudioRequest().getAudio());
                 audio.title("sound.mp3");
                 sendRequest(audio, new SendAudioCallback(message));
