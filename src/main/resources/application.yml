@@ -100,11 +100,112 @@ adventure:
         imageUrl: OKAY_LETS_GO.jpg
         key: OKAY_LETS_GO
         audioUrl: OKAY_LETS_GO.mp3
-        text: Алина решает последовать за кошак и выяснить, что же всё-таки его сюда привело
+        text: Алина решает последовать за кошаком и выяснить, что же всё-таки его сюда привело
         buttons:
           -
             text: Продолжить
-            callback:
+            callback: ENTRANCE_WAY
+      -
+        imageUrl: ENTRANCE_WAY.jpg
+        key: ENTRANCE_WAY
+        text: Она начинает спускаться за ним по лестнице
+        buttons:
+          -
+            text: Продолжить
+            callback: FOLLOWING_THE_CAT_OUTSIDE
+      -
+        imageUrl: FOLLOWING_THE_CAT_OUTSIDE.jpg
+        key: FOLLOWING_THE_CAT_OUTSIDE
+        text: Выйдя из подъезда, кошак направился к машине. Что же делать?
+        buttons:
+          -
+            text: Пойти спать
+            callback: BACK_HOME
+          -
+            text: Идти за кошаком
+            callback: WISKAS_SERIOUSLY
+      -
+        imageUrl: BACK_HOME.jpg
+        key: BACK_HOME
+        text: Алина решила вернуться домой https://www.youtube.com/watch?v=cDWgs2cnga0
+        buttons:
+          -
+            text: Продолжить
+            callback: SLEEPING
+      -
+        imageUrl: SLEEPING.jpg
+        key: SLEEPING
+        text: Вернувшись домой, она уснула и вскоре проснулась. Саламалейкум. Конец, сон для слабаков
+        buttons:
+          -
+            text: Начать заново
+            callback: INITIAL
+      -
+        imageUrl: WISKAS_SERIOUSLY.jpg
+        key: WISKAS_SERIOUSLY
+        text: Алина садится в машину и замечает, что кошак начал прыгать на вискасе... Ну и дебил...
+        buttons:
+          -
+            text: Продолжить
+            callback: HOLDING_TRIANGLE
+      -
+        imageUrl: HOLDING_TRIANGLE.jpg
+        key: HOLDING_TRIANGLE
+        text: Как вдруг кот отрывает какой-то треугольник
+        buttons:
+          -
+            text: Продолжить
+            callback: NOT_ORIGINAL
+      -
+        imageUrl: NOT_ORIGINAL.jpg
+        key: NOT_ORIGINAL
+        text: ...
+        buttons:
+          -
+            text: Продолжить
+            callback: NO
+      -
+        imageUrl: NO.jpg
+        key: NO
+        text: ...
+        buttons:
+          -
+            text: Продолжить
+            callback: OKAY_CAP
+      -
+        imageUrl: OKAY_CAP.jpg
+        key: OKAY_CAP
+        text: ...
+        buttons:
+          -
+            text: Продолжить
+            callback: TRIANGLE
+      -
+        imageUrl: TRIANGLE.jpg
+        key: TRIANGLE
+        text: Алина берёт в руки треугольник
+        buttons:
+          -
+            text: Додумать самой
+            callback: CRYING_CAT
+          - text: Нет
+            callback: HAPPY_END_TRIANGLE
+      -
+        imageUrl: CRYING_CAT.jpg
+        key: CRYING_CAT
+        text: ик??.... Это жестоко... Не надо так
+        buttons:
+          -
+            text: Начать заново
+            callback: INITIAL
+      -
+        imageUrl: HAPPY_END_TRIANGLE.jpg
+        key: HAPPY_END_TRIANGLE
+        text: ...
+        buttons:
+          -
+            text: Продолжить
+            callback: FINAL_QR_CODE_UNSUCCESSFULL
       -
         imageUrl: PAPER_FOUND.jpg
         key: PAPER_FOUND
