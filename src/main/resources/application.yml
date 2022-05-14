@@ -5,252 +5,198 @@ telegram:
 adventure:
   action:
     data:
-      -
-        imageUrl: INITIAL.jpg
+      - imageUrl: INITIAL.jpg
         audioUrl: CAT_RUSTLE.mp3
         key: INITIAL
         text: На часах 08:00. Алина проснулась от необычного шороха
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: WHO_WAKES_UP_SO_EARLY
-      -
-        imageUrl: WHO_WAKES_UP_SO_EARLY.jpg
+      - imageUrl: WHO_WAKES_UP_SO_EARLY.jpg
         audioUrl: WOMAN_HMM.mp3
         key: WHO_WAKES_UP_SO_EARLY
         text: Кто бы это мог быть так рано? - подумала она
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: WAY_TO_THE_KITCHEN
-      -
-        imageUrl: WAY_TO_THE_KITCHEN.jpg
+      - imageUrl: WAY_TO_THE_KITCHEN.jpg
         key: WAY_TO_THE_KITCHEN
         text: Нехотя встав с кровати, она последовала за шорохом
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: AT_THE_KITCHEN
-      -
-        imageUrl: AT_THE_KITCHEN.jpg
+      - imageUrl: AT_THE_KITCHEN.jpg
         audioUrl: MEOW_AT_THE_KITCHEN.mp3
         key: AT_THE_KITCHEN
         text: Каково было её удивление, когда она увидела кошака, бегающего по кругу
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: RUNNING_AFTER_THE_CAT
-      -
-        imageUrl: RUNNING_AFTER_THE_CAT.jpg
+      - imageUrl: RUNNING_AFTER_THE_CAT.jpg
         audioUrl: CAT_RUNNING.mp3
         key: RUNNING_AFTER_THE_CAT
         text: Кошак, увидев Алину, побежал ко входной двери
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: FOLLOW_THE_CAT_OR_NOT
-      -
-        imageUrl: FOLLOW_THE_CAT_OR_NOT.jpg
+      - imageUrl: FOLLOW_THE_CAT_OR_NOT.jpg
         audioUrl: MEOW_NEAR_THE_DOOR.mp3
         key: FOLLOW_THE_CAT_OR_NOT
         text: Кошак остановился возле входной двери и начал мяукать, что же делать, подумала Алина?
         buttons:
-          -
-            text: Забить на кошака
+          - text: Забить на кошака
             callback: GOODBYE_KITTY
-          -
-            text: Пойти за ним
+          - text: Пойти за ним
             callback: OKAY_LETS_GO
-      -
-        imageUrl: GOODBYE_KITTY.jpg
+      - imageUrl: GOODBYE_KITTY.jpg
         audioUrl: ADIOS.mp3
         key: GOODBYE_KITTY
         text: Алина, скрепя сердцем, выпускает кошака....
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: WILL_BUY_A_NEW_ONE
-      -
-        imageUrl: WILL_BUY_A_NEW_ONE.jpg
+      - imageUrl: WILL_BUY_A_NEW_ONE.jpg
         key: WILL_BUY_A_NEW_ONE
-        text: Блииин, как он там? что я наделала?......
+        text: Блииин, как он там? что я наделала?...... Тем временем кошак https://www.youtube.com/shorts/dVS4EkKsODg
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: HEARING_MEOW_AGAIN
-      -
-        imageUrl: HEARING_MEOW_AGAIN.jpg
+      - imageUrl: HEARING_MEOW_AGAIN.jpg
         key: HEARING_MEOW_AGAIN
         audioUrl: MEOW_BEHIND_THE_DOOR.mp3
         text: Не успела она подумать, как из коридора донеслось знакомое "МЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯУ"
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: HELLO_KITTY_AGAIN
-      -
-        imageUrl: HELLO_KITTY_AGAIN.jpg
+      - imageUrl: HELLO_KITTY_AGAIN.jpg
         key: HELLO_KITTY_AGAIN
         audioUrl: HELLO_KITTY_AGAIN.mp3
         text: Это был кошак!
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: PAPER_FOUND
-      -
-        imageUrl: OKAY_LETS_GO.jpg
+      - imageUrl: OKAY_LETS_GO.jpg
         key: OKAY_LETS_GO
         audioUrl: OKAY_LETS_GO.mp3
         text: Алина решает последовать за кошаком и выяснить, что же всё-таки его сюда привело
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: ENTRANCE_WAY
-      -
-        imageUrl: ENTRANCE_WAY.jpg
+      - imageUrl: ENTRANCE_WAY.jpg
         key: ENTRANCE_WAY
         text: Она начинает спускаться за ним по лестнице
+        audioUrl: TRAHTENBERG_JOKE.mp3
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: FOLLOWING_THE_CAT_OUTSIDE
-      -
-        imageUrl: FOLLOWING_THE_CAT_OUTSIDE.jpg
+      - imageUrl: FOLLOWING_THE_CAT_OUTSIDE.jpg
         key: FOLLOWING_THE_CAT_OUTSIDE
         text: Выйдя из подъезда, кошак направился к машине. Что же делать?
+        audioUrl: WOMAN_HMM.mp3
         buttons:
-          -
-            text: Пойти спать
+          - text: Пойти спать
             callback: BACK_HOME
-          -
-            text: Идти за кошаком
+          - text: Идти за кошаком
             callback: WISKAS_SERIOUSLY
-      -
-        imageUrl: BACK_HOME.jpg
+      - imageUrl: BACK_HOME.jpg
         key: BACK_HOME
         text: Алина решила вернуться домой https://www.youtube.com/watch?v=cDWgs2cnga0
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: SLEEPING
-      -
-        imageUrl: SLEEPING.jpg
+      - imageUrl: SLEEPING.jpg
         key: SLEEPING
         text: Вернувшись домой, она уснула и вскоре проснулась. Саламалейкум. Конец, сон для слабаков
+        audioUrl: SNORING_WITH_WHISTLE.mp3
         buttons:
-          -
-            text: Начать заново
+          - text: Начать заново
             callback: INITIAL
-      -
-        imageUrl: WISKAS_SERIOUSLY.jpg
+      - imageUrl: WISKAS_SERIOUSLY.jpg
         key: WISKAS_SERIOUSLY
         text: Алина садится в машину и замечает, что кошак начал прыгать на вискасе... Ну и дебил...
+        audioUrl: WHISKAS.mp3
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: HOLDING_TRIANGLE
-      -
-        imageUrl: HOLDING_TRIANGLE.jpg
+      - imageUrl: HOLDING_TRIANGLE.jpg
         key: HOLDING_TRIANGLE
-        text: Как вдруг кот отрывает какой-то треугольник
+        text: Как вдруг кот отрывает какой-то треугольник https://www.youtube.com/watch?v=d0H1RSbmlkM
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: NOT_ORIGINAL
-      -
-        imageUrl: NOT_ORIGINAL.jpg
+      - imageUrl: NOT_ORIGINAL.jpg
         key: NOT_ORIGINAL
         text: ...
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: NO
-      -
-        imageUrl: NO.jpg
+      - imageUrl: NO.jpg
         key: NO
         text: ...
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: OKAY_CAP
-      -
-        imageUrl: OKAY_CAP.jpg
+      - imageUrl: OKAY_CAP.jpg
         key: OKAY_CAP
         text: ...
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: TRIANGLE
-      -
-        imageUrl: TRIANGLE.jpg
+      - imageUrl: TRIANGLE.jpg
         key: TRIANGLE
         text: Алина берёт в руки треугольник
+        audioUrl: WOMAN_HMM.mp3
         buttons:
-          -
-            text: Додумать самой
+          - text: Додумать самой
             callback: CRYING_CAT
           - text: Нет
             callback: HAPPY_END_TRIANGLE
-      -
-        imageUrl: CRYING_CAT.jpg
+      - imageUrl: CRYING_CAT.jpg
         key: CRYING_CAT
         text: ик??.... Это жестоко... Не надо так
         buttons:
-          -
-            text: Начать заново
+          - text: Начать заново
             callback: INITIAL
-      -
-        imageUrl: HAPPY_END_TRIANGLE.jpg
+      - imageUrl: HAPPY_END_TRIANGLE.jpg
         key: HAPPY_END_TRIANGLE
         text: ...
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: FINAL_QR_CODE_UNSUCCESSFULL
-      -
-        imageUrl: PAPER_FOUND.jpg
+      - imageUrl: PAPER_FOUND.jpg
         key: PAPER_FOUND
         audioUrl: PAPER_SOUND.mp3
         text: Странную записку заметила алина у кошака на шерсти, она развернула её
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: TO_FIND_NEW_WAY
-      -
-        imageUrl: TO_FIND_NEW_WAY.jpg
+      - imageUrl: TO_FIND_NEW_WAY.jpg
         key: TO_FIND_NEW_WAY
-        text: ...
+        text: https://www.youtube.com/watch?v=12qTHu3COOQ
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: WHAT_THE_HELL_IS_THIS_PAPER
-      -
-        imageUrl: WHAT_THE_HELL_IS_THIS_PAPER.jpg
+      - imageUrl: WHAT_THE_HELL_IS_THIS_PAPER.jpg
         key: WHAT_THE_HELL_IS_THIS_PAPER
         text: Это что, цитата из паблика??? Она перевернула записку
         buttons:
-          -
-            text: Продолжить
+          - text: Продолжить
             callback: QUOTE_15_WAIT
-      -
-        imageUrl: QUOTE_15_WAIT.jpg
+      - imageUrl: QUOTE_15_WAIT.jpg
         key: QUOTE_15_WAIT
         audioUrl: WOMAN_HMM.mp3
         text: Хммм
         buttons:
-          -
-            text: Подождать 15 минут
+          - text: Подождать 15 минут
             callback: RIP_BORING
-          -
-            text: Нет
+          - text: Нет
             callback: SMALL_NOTE
-      -
-        imageUrl: RIP_BORING.jpg
+      - imageUrl: RIP_BORING.jpg
         key: RIP_BORING
         audioUrl: VIOLIN_DEATH.mp3
         text: К сожалению, Алина погибла от скуки, не будьте такими жестокими
         buttons:
-          -
-            text: Начать заново
+          - text: Начать заново
             callback: INITIAL
       - imageUrl: SMALL_NOTE.jpg
         key: SMALL_NOTE
@@ -273,6 +219,7 @@ adventure:
       - imageUrl: START_THE_CAR.jpg
         key: START_THE_CAR
         text: Заводит машину
+        audioUrl: WINDOWS_START.mp3
         buttons:
           - text: Продолжить
             callback: STREET_RACING
