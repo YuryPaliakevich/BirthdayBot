@@ -54,6 +54,7 @@ public class TelegramServiceFacade {
     }
 
     public void sendMessage(final String callbackKey) {
+        log.info("Selected :{} key", callbackKey);
         final AdventureConfigAction adventureConfigActionByKey = advConfigProperties.getAdventureConfigActionByKey(callbackKey);
         final Message message = createMessage(adventureConfigActionByKey);
         telegramService.sendMessage(message);

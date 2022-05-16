@@ -77,8 +77,7 @@ adventure:
             callback: PAPER_FOUND
       - imageUrl: OKAY_LETS_GO.jpg
         key: OKAY_LETS_GO
-        audioUrl: OKAY_LETS_GO.mp3
-        text: Алина решает последовать за кошаком и выяснить, что же всё-таки его сюда привело
+        text: Алина решает последовать за кошаком и выяснить, что же всё-таки его сюда привело https://www.youtube.com/watch?v=KbDFCn29BGE
         buttons:
           - text: Продолжить
             callback: ENTRANCE_WAY
@@ -162,7 +161,7 @@ adventure:
         text: ...
         buttons:
           - text: Продолжить
-            callback: FINAL_QR_CODE_UNSUCCESSFULL
+            callback: FINAL_QR_CODE_SUCCESSFULL
       - imageUrl: PAPER_FOUND.jpg
         key: PAPER_FOUND
         audioUrl: PAPER_SOUND.mp3
@@ -240,17 +239,10 @@ adventure:
         text: ...
         buttons:
           - text: Продолжить
-            callback: FINAL_QR_CODE_UNSUCCESSFULL
+            callback: FINAL_QR_CODE_SUCCESSFULL
       - imageUrl: FINAL_QR_CODE_SUCCESSFULL.jpg
         key: FINAL_QR_CODE_SUCCESSFULL
         text: А шо это тут такое интересное
         buttons:
           - text: Ещё разок ? :)
             callback: INITIAL
-      - imageUrl: FINAL_QR_CODE_UNSUCCESSFULL.jpg
-        key: FINAL_QR_CODE_UNSUCCESSFULL
-        text: А шо это тут такое интересное
-        buttons:
-          - text: Ещё разок ? :)
-            callback: INITIAL
-
